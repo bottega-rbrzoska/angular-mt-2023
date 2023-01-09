@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'mt-test',
@@ -10,4 +11,20 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 })
 export class TestComponent {
 
+  displayMsg = '';
+
+  @Input()
+  set msg(msgVal: string) {
+    this.displayMsg = this.uppercasePipe.transform(msgVal)
+  }
+
+  uppercasePipe = new UpperCasePipe();
+
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+
+  }
 }

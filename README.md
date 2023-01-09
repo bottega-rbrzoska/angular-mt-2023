@@ -26,4 +26,4 @@
 19. Budowanie, deployment, konfigurowanie, dockeryzacja - przygotowanie aplikacji na potrzeby uruchomienia produkcyjnego
 
 ## Zadania
-1. 
+1. Stwórz za pomocą CLI komponenty: HomeComponent, WelcomeComponent i ContactComponent.
