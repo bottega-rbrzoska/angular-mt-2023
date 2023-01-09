@@ -10,12 +10,13 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "skipTests": true,
           "style": "scss"
         }
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "mt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
