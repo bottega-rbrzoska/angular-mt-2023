@@ -1,5 +1,6 @@
 import { UpperCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { MyType } from '../models/MyType';
 
 @Component({
   selector: 'mt-test',
@@ -7,11 +8,15 @@ import { ChangeDetectionStrategy, Component, Input, SimpleChanges, ViewEncapsula
   styleUrls: ['./test.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-
 })
 export class TestComponent {
 
-  displayMsg = '';
+  displayMsg: string = 'test';
+
+  testobject: MyType = {
+    name: 'testname',
+    count: 10
+  }
 
   @Input()
   set msg(msgVal: string) {

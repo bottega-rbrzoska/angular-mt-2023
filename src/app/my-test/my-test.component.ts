@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyType } from '../models/MyType';
 
 @Component({
   selector: 'mt-my-test',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-test.component.scss']
 })
 export class MyTestComponent {
-
+  testvar: MyType = {
+    name: 'testname'
+  }
 }
