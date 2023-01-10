@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TestService } from './core/test.service';
 
 @Component({
   selector: 'mt-root',

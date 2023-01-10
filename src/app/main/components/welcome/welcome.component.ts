@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PageInfo } from '../models/PageInfo';
+import { PageInfo } from '../../../models/PageInfo';
 
 @Component({
   selector: 'mt-welcome',
@@ -9,10 +9,9 @@ import { PageInfo } from '../models/PageInfo';
 export class WelcomeComponent {
   @Input() username!: string;
   @Input() pageInfo!: PageInfo;
-  @Output() welcomeMsg = new EventEmitter<string>()
-
+  @Output() welcomeMsg = new EventEmitter<string>();
 
   clickHandler() {
-    this.welcomeMsg.emit('Hi' + this.username)
+    this.welcomeMsg.emit('Hi' + this.username);
   }
 }

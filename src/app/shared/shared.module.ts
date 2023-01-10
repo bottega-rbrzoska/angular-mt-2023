@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestPipe } from './test.pipe';
-import { VatPipe } from './vat.pipe';
+import { TestPipe } from './pipes/test.pipe';
+import { VatPipe } from './pipes/vat.pipe';
 
 @NgModule({
   declarations: [TestPipe, VatPipe],

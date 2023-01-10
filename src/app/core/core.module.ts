@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestService } from './test.service';
+import { HttpClientModule } from '@angular/common/http';
 import { MULTI_PROVIDER_TOKEN } from '../tokens';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   providers: [
-    TestService,
     { provide: MULTI_PROVIDER_TOKEN, useValue: { name: 'test1' }, multi: true },
     { provide: MULTI_PROVIDER_TOKEN, useValue: { name: 'test2' }, multi: true }
   ]

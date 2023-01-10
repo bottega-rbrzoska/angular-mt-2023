@@ -1,13 +1,9 @@
-import { Component } from '@angular/core';
-import { Product } from 'src/app/models';
+import { Injectable } from '@angular/core';
+import { Product } from '../../models/Product';
 
-@Component({
-  selector: 'mt-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
-})
-export class ProductListComponent {
-  products: Product[] = [
+@Injectable()
+export class ProductsService {
+  private _products: Product[] = [
     {
       id: '1',
       name: 'Dehydrated water',
@@ -33,4 +29,10 @@ export class ProductListComponent {
       price: 190
     }
   ];
+
+  constructor() {}
+
+  getProducts(): Product[] {
+    return this._products;
+  }
 }

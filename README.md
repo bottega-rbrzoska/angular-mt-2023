@@ -17,7 +17,7 @@
 
 ### Dzień 3
 12. Angular Forms (Template vs Model driven / reactive), własne kontrolki
-13. Zaawansowany routing - guardy, resolvery
+13. Zaawansowany routing - guardy
 14. Zaawansowane użycie dyrektyw *
 15. OAuth 2.0 w Angularze *
 16. Podstawy mikro-frontendów (Module Federation, Angular Elements webcomponents) *
@@ -26,4 +26,4 @@
 19. Budowanie, deployment, konfigurowanie, dockeryzacja - przygotowanie aplikacji na potrzeby uruchomienia produkcyjnego
 
 ## Zadania
-1. Stwórz za pomocą CLI komponenty: HomeComponent, WelcomeComponent i ContactComponent.
+
