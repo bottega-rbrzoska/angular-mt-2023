@@ -8,10 +8,13 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { VatPipe } from '../shared/vat.pipe';
 
+export const myFactory = () => new VatPipe();
 
 @NgModule({
   declarations: [ProductListComponent, ProductAddComponent, ProductItemComponent, ProductEditComponent, ProductFormComponent],
-  imports: [SharedModule, CommonModule, ProductsRoutingModule]
+  imports: [SharedModule, CommonModule, ProductsRoutingModule],
+  providers: []
 })
 export class ProductsModule {}

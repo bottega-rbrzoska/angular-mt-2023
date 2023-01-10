@@ -1,7 +1,9 @@
 import { UpperCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { TestService } from '../core/test.service';
 import { MyType } from '../models/MyType';
-
+import { MULTI_PROVIDER_TOKEN } from '../tokens';
+export type ConfigValue = { name: string };
 @Component({
   selector: 'mt-test',
   templateUrl: './test.component.html',
@@ -22,6 +24,11 @@ export class TestComponent {
   @Input()
   set msg(msgVal: string) {
     this.displayMsg = this.uppercasePipe.transform(msgVal);
+  }
+
+  constructor(@Inject(MULTI_PROVIDER_TOKEN) multiProvider: ConfigValue[], public testService: TestService) {
+    console.log(multiProvider);
+    console.log(testService.data);
   }
 
   uppercasePipe = new UpperCasePipe();
