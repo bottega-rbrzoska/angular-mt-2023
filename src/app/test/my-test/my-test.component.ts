@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MyType } from '../models/MyType';
+import { MyType } from '../../models/MyType';
 
 @Component({
   selector: 'mt-my-test',
@@ -9,5 +9,5 @@ import { MyType } from '../models/MyType';
 export class MyTestComponent {
   testvar: MyType = {
     name: 'testname'
-  }
+  };
 }
