@@ -1,4 +1,20 @@
-<p class="red-box">test works!</p>
-<div>{{ displayMsg }}</div>
+<button (click)="toggleBox()">Toggle box</button>
+<ng-container *ngIf="showBox; else hiddenBoxFallback">
+  <p class="red-box">test works!</p>
 
-<div>{{ testobject | json }}</div>
+  <div>{{ displayMsg }}</div>
+
+  <div>{{ testobject | json }}</div>
+</ng-container>
+<ng-template #hiddenBoxFallback>
+  <div>Box is hidden</div>
+</ng-template>
+<div>
+  <ul>
+    <li *ngFor="let myItem of dataCollection; let i = index; let odd = odd" [ngClass]="{
+      oddHighlight: odd,
+      green: myItem.count && myItem.count <= 20,
+      red: myItem.count && myItem.count > 20}">({{ i }}){{ myItem.name}}
+    </li>
+  </ul>
+</div>
