@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from 'src/app/models/Product';
+import { Product } from 'src/app/models';
 
 @Component({
   selector: 'mt-product-list',
