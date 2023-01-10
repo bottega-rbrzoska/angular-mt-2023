@@ -7,19 +7,11 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [
-    ProductListComponent,
-    ProductAddComponent,
-    ProductItemComponent,
-    ProductEditComponent,
-    ProductFormComponent
-  ],
-  imports: [
-    CommonModule,
-    ProductsRoutingModule
-  ]
+  declarations: [ProductListComponent, ProductAddComponent, ProductItemComponent, ProductEditComponent, ProductFormComponent],
+  imports: [SharedModule, CommonModule, ProductsRoutingModule]
 })
-export class ProductsModule { }
+export class ProductsModule {}

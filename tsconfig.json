@@ -24,7 +24,7 @@
       "dom"
     ],
     "paths": {
-      "@mt/models":["models/index"]
+      "@mt/models":["src/app/models/index"]
     }
   },
   "angularCompilerOptions": {

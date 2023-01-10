@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MyType } from '../../models/MyType';
+import { MyType } from '@mt/models';
 
 @Component({
   selector: 'mt-my-test',
