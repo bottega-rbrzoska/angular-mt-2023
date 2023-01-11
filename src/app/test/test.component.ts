@@ -1,5 +1,6 @@
 import { UpperCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MyType } from '../models/MyType';
 import { MULTI_PROVIDER_TOKEN } from '../tokens';
@@ -28,9 +29,13 @@ export class TestComponent {
     this.displayMsg = this.uppercasePipe.transform(msgVal);
   }
 
-  constructor(@Inject(MULTI_PROVIDER_TOKEN) multiProvider: ConfigValue[], public testService: TestService) {
-    console.log(multiProvider);
-    testService.getTestData();
+  constructor(
+    @Inject(MULTI_PROVIDER_TOKEN) multiProvider: ConfigValue[],
+    public testService: TestService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    console.log(activatedRoute);
+    // testService.getTestData();
     this.data$ = testService.data$;
   }
 

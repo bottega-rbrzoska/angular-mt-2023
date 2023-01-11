@@ -13,12 +13,13 @@ export class TestService {
   }
 
   getTestData() {
-    this._httpClient.get('http://localhost:3000/test').subscribe((data) => console.log(data));
+    return this._httpClient.get('http://localhost:3000/test');
   }
 
   changeData(newvalue: number) {
     this._dataSubj.next(newvalue);
   }
+
 
   increment() {
     this._dataSubj.next(this._dataSubj.value + 1);

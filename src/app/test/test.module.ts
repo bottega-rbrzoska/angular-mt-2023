@@ -7,10 +7,11 @@ import { MyTestComponent } from './my-test/my-test.component';
 import { SharedModule } from '../shared/shared.module';
 import { TestService } from './test.service';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { TestResolver } from './test.resolver';
 
 @NgModule({
   declarations: [TestComponent, MyTestComponent, RxjsComponent],
   imports: [CommonModule, TestRoutingModule, SharedModule],
-  providers: [TestService]
+  providers: [TestService, TestResolver]
 })
 export class TestModule {}
