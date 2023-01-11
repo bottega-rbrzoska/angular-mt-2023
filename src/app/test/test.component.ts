@@ -1,5 +1,6 @@
 import { UpperCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, Input, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MyType } from '../models/MyType';
 import { MULTI_PROVIDER_TOKEN } from '../tokens';
 import { TestService } from './test.service';
@@ -13,6 +14,7 @@ export type ConfigValue = { name: string };
 })
 export class TestComponent {
   displayMsg: string = 'test';
+  data$: Observable<number>;
   showBox = false;
   testobject: MyType = {
     name: 'testname',
@@ -29,6 +31,7 @@ export class TestComponent {
   constructor(@Inject(MULTI_PROVIDER_TOKEN) multiProvider: ConfigValue[], public testService: TestService) {
     console.log(multiProvider);
     testService.getTestData();
+    this.data$ = testService.data$;
   }
 
   uppercasePipe = new UpperCasePipe();
@@ -38,5 +41,9 @@ export class TestComponent {
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
+  }
+
+  incr() {
+    this.testService.increment();
   }
 }

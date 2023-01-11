@@ -1,3 +1,5 @@
+<button (click)="incr()">increment</button>
+<div>{{ data$ | async }}</div>
 <button (click)="toggleBox()">Toggle box</button>
 <ng-container *ngIf="showBox; else hiddenBoxFallback">
   <p class="red-box">test works!</p>
