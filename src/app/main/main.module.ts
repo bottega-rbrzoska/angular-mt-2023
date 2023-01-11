@@ -10,6 +10,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactService } from './services/contact.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ContactService } from './services/contact.service';
     LoginComponent,
     ContactFormComponent
   ],
-  imports: [CommonModule, MainRoutingModule],
+  imports: [CommonModule, MainRoutingModule, SharedModule],
   exports: [NavigationComponent, MainRoutingModule],
   providers: [ContactService]
 })

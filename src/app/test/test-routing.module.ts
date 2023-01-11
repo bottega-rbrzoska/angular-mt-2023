@@ -6,7 +6,11 @@ import { TestComponent } from './test.component';
 import { TestResolver } from './test.resolver';
 
 const routes: Routes = [
-  { path: '', component: TestComponent, resolve: { testData: TestResolver } },
+  {
+    path: '',
+    component: TestComponent
+    //resolve: { testData: TestResolver }
+  },
   { path: 'my-test', component: MyTestComponent },
   { path: 'rxjs', component: RxjsComponent }
 ];
