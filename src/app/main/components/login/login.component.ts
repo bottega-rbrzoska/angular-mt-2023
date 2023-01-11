@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'mt-login',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  @Input() isLoggedIn!: boolean;
+  @Output() auth = new EventEmitter<boolean>();
 
+  login() {
+    this.auth.emit(true);
+  }
+
+  logout() {
+    this.auth.emit(false);
+  }
 }

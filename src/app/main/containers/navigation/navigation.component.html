@@ -4,4 +4,5 @@
   <a routerLink="/contact">Contact</a>
   <a routerLink="/test/rxjs">RxJS</a>
   <a routerLink="/test">Test</a>
+  <mt-login [isLoggedIn]="(isLoggedIn$ | async)!" (auth)="authHandler($event)"></mt-login>
 </nav>
